@@ -1,5 +1,4 @@
 import React from 'react';
-import _ from 'lodash';
 
 import { BlogCard } from '../BlogCard';
 
@@ -16,9 +15,9 @@ export function BlogCardList({ list, columnCount }) {
 
   return (
     <div className="blog-list-BlogCardList">
-      {_.map(rows, (rowItems, i) => (
+      {rows.map((rowItems, i) => (
         <div key={i} className="blog-list-BlogCardList__row">
-          {_.map(rowItems, (item, j) => (
+          {rowItems.map((item, j) => (
             <div
               key={j}
               className="blog-list-BlogCardList__column"
