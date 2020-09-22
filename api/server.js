@@ -9,6 +9,4 @@ app.use(express.static('dist'));
 app.use(apiController);
 app.use(spaController);
 
-// app.listen(PORT);
 (process.env.NOW_REGION) ? module.exports = app : app.listen(PORT);
-console.log(`Server running at ${PORT}`);
