@@ -1,6 +1,12 @@
 import React from 'react';
-import moment from 'moment-timezone';
+import dayjs from 'dayjs';
+import timezone from 'dayjs/plugin/timezone';
+import relativeTime from 'dayjs/plugin/relativeTime';
 import { Link } from 'react-router-dom';
+
+dayjs.extend(timezone);
+dayjs.extend(relativeTime);
+dayjs.tz.setDefault('Asia/Tokyo');
 
 export function EntryHeader({ title, publishedAt, location }) {
   return (
@@ -12,10 +18,10 @@ export function EntryHeader({ title, publishedAt, location }) {
       </h2>
       <time
         className="entry-EntryHeader__published-at"
-        dateTime={moment(publishedAt).toISOString(true)}
-        title={moment(publishedAt).toISOString(true)}
+        dateTime={dayjs(publishedAt).toISOString(true)}
+        title={dayjs(publishedAt).toISOString(true)}
       >
-        {moment(publishedAt).format('YYYY-MM-DD')}
+        {dayjs(publishedAt).format('YYYY-MM-DD')}
       </time>
     </div>
   );
