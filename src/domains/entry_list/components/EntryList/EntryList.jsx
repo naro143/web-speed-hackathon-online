@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import moment from 'moment-timezone';
+import moment from 'moment';
 
 import { ProportionalImage } from '../../../../foundation/components/ProportionalImage';
 
