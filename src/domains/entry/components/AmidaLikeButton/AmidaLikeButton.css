@@ -25,3 +25,8 @@
 .entry-AmidaLikeButton__like-count {
   margin-left: var(--space);
 }
+
+.entry-AmidaLikeButton img {
+  height: 14px;
+  width: 14px;
+}
