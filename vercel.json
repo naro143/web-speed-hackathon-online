@@ -1,10 +1,17 @@
 {
   "version": 2,
   "public": false,
-  "cleanUrls": true,
-  "trailingSlash": false,
   "github": {
     "silent": false,
     "autoJobCancelation": true
-  }
+  },
+  "routes": [
+    { "src": "/api/blogs", "dest": "api/server.js" },
+    { "src": "/api/blog/(?<blogId>[^/]+)", "dest": "api/server.js" },
+    { "src": "/api/blog/(?<blogId>[^/]+)/entries", "dest": "api/server.js" },
+    { "src": "/api/blog/(?<blogId>[^/]+)/entry/(?<entryId>[^/]+)", "dest": "api/server.js" },
+    { "src": "/api/blog/(?<blogId>[^/]+)/entry/(?<entryId>[^/]+)/comments", "dest": "api/server.js" },
+    { "src": "/api/blog/(?<blogId>[^/]+)/entry/(?<entryId>[^/]+)/comment/(?<commentId>[^/]+)", "dest": "api/server.js" },
+    { "src": "/api/blog/(?<blogId>[^/]+)/entry/(?<entryId>[^/]+)/like", "dest": "api/server.js" }
+  ]
 }
