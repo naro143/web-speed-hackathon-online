@@ -4,7 +4,15 @@ import _ from 'lodash';
 import { BlogCard } from '../BlogCard';
 
 export function BlogCardList({ list, columnCount }) {
-  const rows = _.chunk(list, columnCount);
+  const rows = [];
+  let index = 0;
+  while (1) {
+    rows.push(list.slice(index, index + columnCount));
+    index += columnCount;
+    if (list.length <= index) {
+      break;
+    }
+  }
 
   return (
     <div className="blog-list-BlogCardList">
